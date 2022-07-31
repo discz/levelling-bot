@@ -9,7 +9,7 @@ from asyncpg import exceptions
 
 class DbOps:
     def __init__(self):
-        self.db = Database('postgresql://postgres:root@localhost:5432/rework')
+        self.db = Database('postgresql://postgres:root@localhost:5432/dc_rework')
 
     # Add queries
 
@@ -22,6 +22,7 @@ class DbOps:
             else:
                 avatar = 'https://cdn.discordapp.com/embed/avatars/0.png'
                 avatar = get(str(avatar)).content
+                print(type(avatar))
 
             if member.premium_since:
                 premium = True
